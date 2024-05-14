@@ -1,29 +1,33 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import assesment from "./../../../public/assests/assesment.png";
+import certificate from "./../../../public/assests/Certification.png";
+import mentoring from "./../../../public/assests/mentoring.png";
+import liveclasses from "./../../../public/assests/liveclasses.png";
 
 interface pathwayprops {
-  img: string;
+  img: StaticImageData;
   heading: string;
   desc: string;
 }
 
 const pathwaydata = [
   {
-    img: "assesment.png",
+    img: assesment,
     heading: "Assesment Test",
     desc: "An initial assessment that helps us discover your passion, strengths, weaknesses and skills",
   },
   {
-    img: "mentoring.png",
+    img: mentoring,
     heading: "Mentoring",
     desc: "Personalised, interactive mentoring in an equal learning environment, based on YOUR priorities and preferences",
   },
   {
-    img: "liveclasses.png",
+    img: liveclasses,
     heading: "Live Clasess",
     desc: "Final assessment to analyse the knowledge and skill level of the mentees gained from the Circles",
   },
   {
-    img: "certification.png",
+    img: certificate,
     heading: "Certification",
     desc: "End of the Mentoring period",
   },
@@ -35,9 +39,9 @@ const PathCard = ({ img, heading, desc }: pathwayprops) => {
       <div className=" flex items-center justify-center w-[200px] max-w-[200px] aspect-square bg-red-400 rounded-[50%]">
         <Image
           //   width={150}
-          width={img == "assesment.png" ? 130 : 550}
+          width={img == assesment ? 130 : 550}
           height={550}
-          src={`/assests/${img}`}
+          src={img}
           alt="image"
         ></Image>
       </div>
